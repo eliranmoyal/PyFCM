@@ -173,7 +173,7 @@ class BaseAPI(object):
 
         if click_action:
             fcm_payload['notification']['click_action'] = click_action
-        if isinstance(badge,int) and badge >=0:
+        if (isinstance(badge,int) or isinstance(badge,long)) and badge >=0:
             fcm_payload['notification']['badge'] = badge
         if color:
             fcm_payload['notification']['color'] = color
